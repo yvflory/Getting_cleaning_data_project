@@ -31,7 +31,7 @@ run_analysis <- function() {
     colnames(train_activity) <- "activity"
     
     ## extract only variables that contain mean and std values
-    train_means <- train_data[,grepl("mean|std", colnames(train_data))]
+    train_means <- train_data[,grepl("mean|std", colnames(train_data), ignore.case = TRUE)]
     
     ## combine all test files
     train_all <- cbind(train_subject, train_activity, train_means)
@@ -44,8 +44,7 @@ run_analysis <- function() {
     ## iterate over each subject, and over each activity
     ## for each combination, calculate mean for each variable
     ## add to new df: subject - activity - means...
-    mean_rows <- 30 * 6
-    mean_data <- data.frame(matrix(ncol = 81, nrow = mean_rows))
+    mean_data <- data.frame(matrix(ncol = ncol(data_all), nrow = 180))
     counter <- 1
 
     for (i in 1:30) { ## subjects
@@ -57,7 +56,7 @@ run_analysis <- function() {
             mean_data[counter,2] <- j
             ## iterate over all (measured) variables and assign the mean
             ## of each column to the new dataframe
-            for (k in 3:81) {
+            for (k in 3:ncol(data_all)) {
                 mean_data[counter,k] <- mean(temp_df[1:nrow(temp_df),k])
             }
             counter <- counter + 1
@@ -80,6 +79,6 @@ run_analysis <- function() {
     ## among those that were dropped.
     
     ## write final table into text file
-    write.table(mean_data, file = "tidy_data.txt", row.names = FALSE)
+    write.table(mean_data, file = "tidy_data_set.txt", row.names = FALSE)
 
 }
