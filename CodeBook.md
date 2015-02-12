@@ -78,7 +78,7 @@ Unique subject id from 1-30
 **fBodyGyro-meanFreq()-X**  
 **fBodyGyro-meanFreq()-Y**  
 **fBodyGyro-meanFreq()-Z**  
-*+fBodyAccMag-mean()**  
+**fBodyAccMag-mean()**  
 **fBodyAccMag-std()**  
 **fBodyAccMag-meanFreq()**  
 **fBodyBodyAccJerkMag-mean()**  
