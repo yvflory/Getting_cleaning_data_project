@@ -29,7 +29,7 @@ Unique subject id from 1-30
 5 - Standing  
 6 - Lying  
   
-**measurements**
+**measurements**  
 Averages of the following variables from the original datasets were taken (variable names are the same in original and converted datasets). These are time and frequency domain variables; where suffixed with X, Y or Z, they are triaxial acceleration and velocity variables taken from an accelerometer and gyroscope, respectively.  
 tBodyAcc-mean()-X  
 tBodyAcc-mean()-Y  
