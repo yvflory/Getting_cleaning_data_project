@@ -49,9 +49,7 @@ run_analysis <- function() {
 
     for (i in 1:30) { ## subjects
         for (j in 1:6) { ## activities
-            ##temp_df is empty (bar cloumn names). Why?
-            #temp_df <- subset(data_all, subject == i & activity == j)
-            temp_df <- data_all[(data_all$subject == i & data_all$activity == j),]
+            temp_df <- filter(data_all, subject == i, activity == j)
             mean_data[counter,1] <- i
             mean_data[counter,2] <- j
             ## iterate over all (measured) variables and assign the mean
