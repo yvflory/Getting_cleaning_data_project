@@ -11,10 +11,10 @@ The script run_analysis.R reads in the original data files (subject list, activi
 - Now that common identifiers exist, both test and training sets are merged together.
 - The resulting dataset now contains all measurements relating to means and standard deviations across all subjects, activities, and for both test and training sessions.
 - The script iterates through each subject and each activity. For each combination of subject and activity (there are 30 * 6 = 180), a temporary subset of rows matching the combination is created. Within this set, the mean (i.e. average) of each column is calculated. All resulting values are put in a new data frame.
-- By the end of these loops, a new data frame exists that contains one row per subject/activity combination, and the respective averages for each of the variables associated with that combination.
-- Column names for the new data frame are taken from the original merged data frame.
+- The new data frame contains one row per subject/activity combination, and the respective averages for each of the variables associated with that combination.
+- Column names for the new data frame are automatically taken from the original merged data frame.
 - Activity levels are transformed into factors and renamed (from numbers to "Walking", etc).
-- The final data frame is written into tidy\_data_set.txt in the working directory.
+- The final data frame is written into tidy\_data.txt in the working directory.
   
   
 ### Variables
