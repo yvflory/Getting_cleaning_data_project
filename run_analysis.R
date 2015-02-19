@@ -60,7 +60,7 @@ run_analysis <- function() {
     ## among those that were dropped.
     
     ## write final table into text file
-    write.table(means, file = "tidy_data_set.txt", row.names = FALSE)
+    write.table(means, file = "tidy_data.txt", row.names = FALSE)
     
     
     
